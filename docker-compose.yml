@@ -11,9 +11,17 @@ services:
                       bundle exec rails s -p 3000 -b '0.0.0.0'"
     depends_on:
       - db
+    links:
+      - mailcatcher
   db:
     image: postgres
     volumes:
       - ./tmp/db:/lib/var/postgresql/data
     environment:
       POSTGRES_PASSWORD: password
+  mailcatcher:
+    image: yappabe/mailcatcher
+    ports:
+      - "1025:1025"
+      - "1080:1080"
+    restart: unless-stopped

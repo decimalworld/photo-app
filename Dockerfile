@@ -6,7 +6,7 @@ RUN apt-get update -qq && \
     apt-get install -y \
     apt-utils \
     nodejs \
-    yarn 
+    yarn
     
 WORKDIR /code/
 COPY Gemfile* /code/
