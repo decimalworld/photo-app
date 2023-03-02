@@ -70,13 +70,10 @@ Rails.application.configure do
     protocol: 'https' 
   }
   config.action_mailer.smtp_settings = {
-    :user_name => ENV['SENDGRID_USERNAME'],
-    :password => ENV['SENDGRID_PASSWORD'],
-    :domain => 'yourdomain.com',
-    :address => 'smtp.sendgrid.net',
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
+    address: "sandbox.smtp.mailtrap.io",
+    port: 2525,
+    user_name: "481adba03d2fb8",
+    password: "c478b5ad30d037"
   }
   ##############
 
